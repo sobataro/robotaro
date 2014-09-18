@@ -1,0 +1,31 @@
+{
+  "name": "robotaro2",
+  "version": "0.0.1",
+  "private": true,
+  "author": "sobataro",
+  "description": "robotaro2: Ignored or Forgotten Pull Request Notifier",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "githubot": "~1.0.0-beta2",
+    "coffee-script": "~1.8.0",
+    "q": "~1.0.1",
+    "time": "~0.11.0",
+    "cron": "~1.0.4",
+    "config": "~1.1.0",
+    "js-yaml": "~3.2.2",
+    "mocha": "~1.21.4",
+    "should": "~4.0.4"
+  },
+  "engines": {
+    "node": ">= 0.8.x",
+    "npm": ">= 1.1.x"
+  },
+  "scripts": {
+    "prepublish": "rm bin/*.js; coffee -o bin -c src",
+    "start": "node bin/robotaro.js",
+    "test": "npm install; rm test/*.js; coffee -c test; ./node_modules/.bin/mocha"
+  }
+}

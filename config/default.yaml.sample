@@ -1,0 +1,29 @@
+# sample configuration - copy this file to "default.yaml" and edit it
+
+# waitAndSeeMinutes: How many minutes does robotaro judege a pull request is ``old'' or not
+waitAndSeeMinutes: 180
+
+cron:
+  # jobDefinition: when does robotaro work?
+  # specify in cron-style (sec min hour dayOfMonth month dayOfWeek)
+  jobDefinition: "0 0 10,13,16,19 * * 1-5" # 10:00, 13:00, 16:00, 19:00 on weekdays
+  timezone: "Asia/Tokyo"
+
+github:
+  apiRoot: "https://api.github.com" # must not include last '/'
+  orgName: "github"
+  defaultUser: "octocat"
+  token: "********"
+  concurrentRequests: 2
+
+  # reposMustWatchStatuses: those repos has some integration (e.g. TravisCI);
+  # so their statuses are watched by robotaro
+  reposMustWatchStatuses:
+    - "Hello-World"
+    - "foobar"
+
+slack: # use "Incoming WebHooks" (not "Hubot", "Slack API" or others)
+  url: "https://****.slack.com/services/hooks/incoming-webhook"
+  token: "********"
+  channels: "#develop"
+  username: "robotaro"
