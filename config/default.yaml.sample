@@ -25,5 +25,5 @@ github:
 slack: # use "Incoming WebHooks" (not "Hubot", "Slack API" or others)
   url: "https://****.slack.com/services/hooks/incoming-webhook"
   token: "********"
-  channels: "#develop"
+  channel: "#develop"
   username: "robotaro"
